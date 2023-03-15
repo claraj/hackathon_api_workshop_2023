@@ -3,7 +3,7 @@ from pprint import pprint
 
 bored_url = 'https://www.boredapi.com/api/activity/'
 
-how_much_money = input('How much money do yu have available today? Enter "none", "some" or "lots" ')
+how_much_money = input('How much money do you have available today? Enter "none", "some" or "lots" ')
 
 if how_much_money == 'none':
     query_parameters = {'price': 0}  # Create query parameter for free activity
