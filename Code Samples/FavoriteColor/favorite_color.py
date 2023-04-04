@@ -14,8 +14,13 @@ print(add_color_response.json())  # Hopefully this will be {"result":"Success - 
 print(add_color_response.status_code)  # 201
 
 # Print a message for the user
-message = add_color_json.get('result')
-print(message)
+try:
+    message = add_color_json.get('result')
+    print(message)
+except AttributeError:
+    print("Error: 'result' key not found in JSON object")
+except Exception as e:
+    print(f"Error: {e}")
 
 # TODO - error handling
 
