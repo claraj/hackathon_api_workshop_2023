@@ -34,7 +34,15 @@ print(all_colors_json)  # For debugging, a list of objects
 # For example [{"name":"purple"},{"name":"orange"}]
 
 # Display the names of all the colors to the user
-for color in all_colors_json:
-    print(color['name'])
+try:
+    for color in all_colors_json:
+        print(color['name'])
+except TypeError:
+    print("Error: all_colors_json is not iterable")
+except KeyError:
+    print("Error: 'name' key not found in color object")
+except Exception as e:
+    print(f"Error: {e}")
+
 
 # TODO error handling
